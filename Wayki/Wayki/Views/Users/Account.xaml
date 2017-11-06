@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:utec="clr-namespace:Wayki.Helpers"
+              Icon="iconUsers" 
+             x:Class="Wayki.Views.Users.Account">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#1c4081">
+
+                <!-- top controls -->
+                <StackLayout Margin="10,3" VerticalOptions="CenterAndExpand" >
+                    <Image Source="Icon.png" VerticalOptions="Center" WidthRequest="150" HeightRequest="150" >
+
+                    </Image>
+                </StackLayout>
+
+
+                <StackLayout Margin="10,3" VerticalOptions="CenterAndExpand"  Padding="10,5" BackgroundColor="#1c4081">
+                    <!-- middle controls -->
+
+                    <ContentView Padding="20, 5" HorizontalOptions="Center" VerticalOptions="Center"  >
+                        <Label VerticalTextAlignment="Center" Text="" TextColor="White" FontFamily="{Binding  Source={x:Static utec:Styles.FuenteBold}}">INGRESE SUS DATOS</Label>
+                    </ContentView>
+                    <ContentView >
+                        <utec:BordeEntry x:Name="UsernameOrEmailAddressEntry" Grid.Row="0"
+ 		                                    Grid.Column="1"
+                                            FontSize="Small" 
+                                            Margin="15, 0, 35,0" 
+                                            VerticalOptions="Start" 
+                                            HorizontalTextAlignment="Center"
+                                            FontFamily="{Binding  Source={x:Static utec:Styles.FuenteLight}}"             
+                                            Text="{Binding Path=UsernameOrEmailAddress}"
+                                         TextChanged="Entry_EmailTextChanged"
+                                            Placeholder="Ingrese su email"
+                                       
+                                         TextColor="White" 
+                                         PlaceholderColor="White"
+                                            HorizontalOptions = "Fill" >
+                            <Entry.Behaviors>
+                                <utec:EntryLengthValidatorBehavior MaxLength="100"   />
+                                <utec:ValidadorEntry x:Name="EmailValidar" EsTexto="True" EsCorreo="True" />
+                            </Entry.Behaviors>
+
+                        </utec:BordeEntry>
+
+                    </ContentView>
+
+                    <ContentView >
+                        <utec:BordeEntry x:Name="Password"   FontSize="Small" Margin="15, 0, 35,0" 
+                                            VerticalOptions="Start" 
+                                            HorizontalTextAlignment="Center"  
+                                            FontFamily="{Binding  Source={x:Static utec:Styles.FuenteLight}}"   
+                                             Text="{Binding Path=Password}"
+                                            Placeholder="Ingrese su password"
+                                            IsPassword="True"
+                                          PlaceholderColor="White"
+                                           TextColor="White"  
+                                            HorizontalOptions = "Fill">
+
+                        </utec:BordeEntry>
+                    </ContentView>
+                    <ContentView>
+                        <Button x:Name="btnIngresar"  Margin="15, 0, 35,0" 
+                                Text="Ingresar"  Clicked="OnLogin" BackgroundColor="#2196F3" BorderWidth="0.5" 
+                                BorderRadius="6" TextColor="White" FontFamily="{Binding  Source={x:Static utec:Styles.FuenteRegular}}" />
+
+
+
+                    </ContentView>
+
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="0,5,10,20">
+                        <Label  HorizontalOptions = "Center" TextColor="White" Text="Registrese aquí" FontSize="Medium" FontFamily="{Binding  Source={x:Static utec:Styles.FuenteBold}}"  >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRegister" ></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                            <BoxView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRegister" ></TapGestureRecognizer>
+                            </BoxView.GestureRecognizers>
+                        </BoxView>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

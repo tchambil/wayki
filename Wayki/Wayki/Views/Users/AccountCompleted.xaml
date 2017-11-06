@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:utec="clr-namespace:Wayki.Helpers"
+               BackgroundColor="#1C4081"
+             x:Class="Wayki.Views.Users.AccountCompleted">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ActivityIndicator
+                Color="White"
+        IsRunning="true"
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand"
+        x:Name="IndicadorDeCarga"
+      />
+            <Label Text="Procesando..." HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" x:Name="Loading">
+
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

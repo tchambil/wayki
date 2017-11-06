@@ -16,5 +16,13 @@ namespace Wayki.Views.Users
 		{
 			InitializeComponent ();
 		}
-	}
+        async void OnRegister(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new RegisterCompleted();
+        }
+        async void OnBack(object sender, EventArgs e)
+        {
+          //  App.Current.MainPage = new Views.Principal.MainPage(new EmergencyAppService(), new EstablishmentAppService());
+        }
+    }
 }

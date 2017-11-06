@@ -13,7 +13,7 @@ namespace Wayki
 		{
 			InitializeComponent();
 
-			MainPage = new Wayki.MainPage();
+			MainPage = new Wayki.Views.Users.Account();
 		}
 
 		protected override void OnStart ()

@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\BordeEditor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\BordeEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\EntryLengthValidatorBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\NegarBooleano.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ShadowEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Styles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Utils.cs" />
@@ -29,6 +30,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\LoginInput.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserInput.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IUserAppService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\UserAppService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Users\Account.xaml.cs">
+      <DependentUpon>Account.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Users\AccountCompleted.xaml.cs">
+      <DependentUpon>AccountCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Users\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -56,6 +66,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Users\RegisterCompleted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Users\Account.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Users\AccountCompleted.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

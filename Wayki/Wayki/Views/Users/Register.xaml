@@ -1,10 +1,155 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:utec="clr-namespace:Wayki.Helpers"
              x:Class="Wayki.Views.Users.Register">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <ContentView Padding="20, 10" BackgroundColor="White" Margin="0, 0, 0, 10">
+                    <Label HorizontalTextAlignment="Start" FontSize="Small"  FontFamily="{Binding  Source={x:Static utec:Styles.FuenteLight}}" >
+                        <Label.Text>
+                            Por favor ingrese sus datos para poder registrar emergencias, albergues,centros de acopio y centros voluntariados.
+                        </Label.Text>
+                    </Label>
+                </ContentView>
+                <RelativeLayout  Style="{StaticResource LayoutForm}">
+                    <Image Style="{StaticResource IconoForm}" Source="GlyphDni.png" ></Image>
+                    <Entry Placeholder="DNI" x:Name="DNI" Keyboard="Numeric" Style="{StaticResource EntryContacto}">
+                        <Entry.Behaviors>
+                            <utec:EntryLengthValidatorBehavior MaxLength="8"   />
+                            <utec:ValidadorEntry x:Name="DNIValidar" EsNumero="True"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Style="{StaticResource Error}" Text="{Binding Source={x:Reference DNIValidar}, Path=Message}" IsVisible="{Binding Source={x:Reference DNIValidar}, Path=MostrarMensaje}"/>
+                    <Image Style="{StaticResource IconoOk}" IsVisible="{Binding Source={x:Reference DNIValidar}, Path=EsValido}"  ></Image>
+                </RelativeLayout>
+
+                <RelativeLayout  Style="{StaticResource LayoutForm}">
+                    <Image Style="{StaticResource IconoForm}" Source="GlyphNombres.png" ></Image>
+                    <Entry Placeholder="Nombres" Keyboard="Text" x:Name="Nombres" Style="{StaticResource EntryContacto}">
+                        <Entry.Behaviors>
+                            <utec:EntryLengthValidatorBehavior MaxLength="70"   />
+                            <utec:ValidadorEntry x:Name="NombresValidar" EsNombre="True"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Style="{StaticResource Error}" Text="{Binding Source={x:Reference NombresValidar}, Path=Message}" IsVisible="{Binding Source={x:Reference NombresValidar}, Path=MostrarMensaje}"/>
+                    <Image Style="{StaticResource IconoOk}"  IsVisible="{Binding Source={x:Reference NombresValidar}, Path=EsValido}"  ></Image>
+                </RelativeLayout>
+                <RelativeLayout  Style="{StaticResource LayoutForm}">
+                    <Image Style="{StaticResource IconoForm}" Source="GlyphNombres.png" ></Image>
+                    <Entry Placeholder="Apellidos" Keyboard="Text" x:Name="Apellidos" Style="{StaticResource EntryContacto}">
+                        <Entry.Behaviors>
+                            <utec:EntryLengthValidatorBehavior MaxLength="70"   />
+                            <utec:ValidadorEntry x:Name="ApellidosValidar" EsNombre="True"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Style="{StaticResource Error}" Text="{Binding Source={x:Reference ApellidosValidar}, Path=Message}" IsVisible="{Binding Source={x:Reference ApellidosValidar}, Path=MostrarMensaje}"/>
+                    <Image Style="{StaticResource IconoOk}" IsVisible="{Binding Source={x:Reference ApellidosValidar}, Path=EsValido}"  ></Image>
+                </RelativeLayout>
+
+                <RelativeLayout  Style="{StaticResource LayoutForm}">
+                    <Image Style="{StaticResource IconoForm}" Source="contacto.png" ></Image>
+                    <Entry Placeholder="Telefono" Keyboard="Telephone" x:Name="Telefono" Style="{StaticResource EntryContacto}">
+                        <Entry.Behaviors>
+                            <utec:EntryLengthValidatorBehavior MaxLength="12"   />
+                            <utec:ValidadorEntry x:Name="TelefonoValidar" EsNumero="True" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Style="{StaticResource Error}" Text="{Binding Source={x:Reference TelefonoValidar}, Path=Message}" IsVisible="{Binding Source={x:Reference TelefonoValidar}, Path=MostrarMensaje}"/>
+                    <Image Style="{StaticResource IconoOk}" IsVisible="{Binding Source={x:Reference TelefonoValidar}, Path=EsValido}"  ></Image>
+                </RelativeLayout>
+
+                <RelativeLayout  Style="{StaticResource LayoutForm}">
+                    <Image Style="{StaticResource IconoForm}" Source="GlyphEmail.png" ></Image>
+                    <Entry Placeholder="Email" x:Name="Email"  Keyboard="Email" Style="{StaticResource EntryContacto}">
+                        <Entry.Behaviors>
+                            <utec:EntryLengthValidatorBehavior MaxLength="100"   />
+                            <utec:ValidadorEntry x:Name="EmailValidar" EsTexto="True" EsCorreo="True" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Style="{StaticResource Error}" Text="{Binding Source={x:Reference EmailValidar}, Path=Message}" IsVisible="{Binding Source={x:Reference EmailValidar}, Path=MostrarMensaje}"/>
+                    <Image Style="{StaticResource IconoOk}" IsVisible="{Binding Source={x:Reference EmailValidar}, Path=EsValido}"  ></Image>
+                </RelativeLayout>
+
+
+                <RelativeLayout  Style="{StaticResource LayoutForm}">
+                    <Image Style="{StaticResource IconoForm}" Source="GlyphPassword.png" ></Image>
+                    <Entry Placeholder="Password" Keyboard="Text"  x:Name="Password" Style="{StaticResource EntryPassword}">
+                        <Entry.Behaviors>
+                            <utec:EntryLengthValidatorBehavior MaxLength="120"   />
+                            <utec:ValidadorEntry x:Name="PasswordValidar" EsPassword="True"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Style="{StaticResource Error}" Text="{Binding Source={x:Reference PasswordValidar}, Path=Message}" IsVisible="{Binding Source={x:Reference PasswordValidar}, Path=MostrarMensaje}"/>
+                    <Image Style="{StaticResource IconoOk}" IsVisible="{Binding Source={x:Reference PasswordValidar}, Path=EsValido}"  ></Image>
+                </RelativeLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
+                    <Button Text=" Registrar "   Style="{StaticResource FormButton}"   Clicked="OnRegister" >
+                    </Button>
+                    <Button Text=" Cancelar "  Style="{StaticResource RegButton}"    Clicked="OnBack"  />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <utec:NegarBooleano x:Key="InvertirBooleano"></utec:NegarBooleano>
+            <utec:Styles x:Key="Styles"></utec:Styles>
+
+            <Style TargetType="Label" x:Key="Error">
+                <Setter Property="RelativeLayout.XConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0,Constant=76}" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteLight}}"></Setter>
+                <Setter Property="RelativeLayout.YConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=35}"></Setter>
+                <Setter Property="RelativeLayout.WidthConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-122}"></Setter>
+                <Setter Property="RelativeLayout.HeightConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=22}"></Setter>
+                <Setter Property="VerticalOptions" Value="Start"></Setter>
+                <Setter Property="HorizontalOptions" Value="Start"></Setter>
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="FontSize" Value="Small"></Setter>
+                <Setter Property="TextColor" Value="Red"></Setter>
+            </Style>
+            <Style TargetType="Image" x:Key="IconoForm">
+                <Setter Property="WidthRequest" Value="36"></Setter>
+                <Setter Property="HeightRequest" Value="36"></Setter>
+                <Setter Property="Opacity" Value="0.6"></Setter>
+                <Setter Property="RelativeLayout.XConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0,Constant=15}"></Setter>
+                <Setter Property="RelativeLayout.YConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=5}"></Setter>
+            </Style>
+            <Style TargetType="Entry" x:Key="EntryPassword">
+                <Setter Property="VerticalOptions" Value="Start"></Setter>
+                <Setter Property="IsPassword" Value="True"></Setter>
+                <Setter Property="Margin" Value="{x:Static utec:Styles.MargenInputs}}"></Setter>
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteLight}}"></Setter>
+                <Setter Property="RelativeLayout.XConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0,Constant=66}"></Setter>
+                <Setter Property="RelativeLayout.YConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"></Setter>
+                <Setter Property="RelativeLayout.WidthConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-122}"></Setter>
+                <Setter Property="RelativeLayout.HeightConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=40}"></Setter>
+            </Style>
+
+            <Style TargetType="Entry" x:Key="EntryContacto">
+                <Setter Property="VerticalOptions" Value="Start"></Setter>
+                <Setter Property="Margin" Value="{x:Static utec:Styles.MargenInputs}}"></Setter>
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteLight}}"></Setter>
+                <Setter Property="RelativeLayout.XConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0,Constant=66}"></Setter>
+                <Setter Property="RelativeLayout.YConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"></Setter>
+                <Setter Property="RelativeLayout.WidthConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-122}"></Setter>
+                <Setter Property="RelativeLayout.HeightConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=40}"></Setter>
+            </Style>
+            <Style TargetType="Image" x:Key="IconoOk">
+                <Setter Property="Source" Value="ok.png"></Setter>
+                <Setter Property="WidthRequest" Value="25"></Setter>
+                <Setter Property="HeightRequest" Value="25"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="RelativeLayout.XConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-40}"></Setter>
+                <Setter Property="RelativeLayout.YConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=5}"></Setter>
+            </Style>
+            <Style TargetType="RelativeLayout" x:Key="LayoutForm">
+                <Setter Property="HeightRequest" Value="30"></Setter>
+                <Setter Property="Margin" Value="0, 10, 0, 8"></Setter>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 </ContentPage>
