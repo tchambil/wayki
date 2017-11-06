@@ -1,10 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:utec="clr-namespace:Wayki.Helpers"
              x:Class="Wayki.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <utec:Styles x:Key="Styles"></utec:Styles>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#1c4081" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteLight}}"></Setter>
+            </Style>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BackgroundColor" Value="#ECEDEF" />
+                <Setter Property="BarBackgroundColor" Value="#2482ce" />
+                <Setter Property="BarTextColor" Value="#ffffff"/>
+            </Style>
 
-	</Application.Resources>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#2482ce" />
+                <Setter Property="BorderColor" Value="#FFFFFF" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteLight}}"></Setter>
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Button" x:Key="FormButton">
+                <Setter Property="BackgroundColor" Value="#1c4081" />
+                <Setter Property="BorderColor" Value="#FFFFFF" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="BorderRadius" Value="1" />
+                <Setter Property="Margin" Value="20, 5" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteRegular}}"></Setter>
+            </Style>
+            <Style TargetType="Button" x:Key="RegButton">
+                <Setter Property="BackgroundColor" Value="#2196F3" />
+                <Setter Property="BorderColor" Value="#2196F3" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="Margin" Value="20, 5" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteRegular}}">
+
+                </Setter>
+            </Style>
+            <Style TargetType="Button" x:Key="FormButtonCamara">
+                <Setter Property="BackgroundColor" Value="#8fc4ee" />
+                <Setter Property="BorderColor" Value="#1c4081" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="Margin" Value="20, 5" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteLight}}"></Setter>
+            </Style>
+
+            <Style TargetType="Button" x:Key="FormButtonAdditional">
+                <Setter Property="BackgroundColor" Value="#cdcfd0" />
+                <Setter Property="BorderColor" Value="#cdcfd0" />
+                <Setter Property="TextColor" Value="#868889" />
+                <Setter Property="BorderRadius" Value="1" />
+                <Setter Property="Margin" Value="20, 5" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="FontFamily" Value="{Binding  Source={x:Static utec:Styles.FuenteRegular}}"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
 </Application>
