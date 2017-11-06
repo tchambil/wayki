@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firebase.Auth;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Wayki.Services
 {
     public interface IUserAppService
     {
-        Task<HttpResponseMessage> Login(LoginInput input);
+        Task<User> Login(LoginInput input);
+        Task<User> AddOrUpdate(UserInput input);
     }
 }

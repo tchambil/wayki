@@ -15,10 +15,15 @@ namespace Wayki.Views.Users
 	public partial class Account : ContentPage
     {
         IUserAppService _userAppService;
-        public Account ()
+        public Account(IUserAppService userAppService)
 		{
-			InitializeComponent ();
-		}
+            _userAppService = userAppService;
+            InitializeComponent ();
+            var user = new LoginInput();
+            user.UsernameOrEmailAddress = "tchambilla@utec.edu.pe";
+            user.Password = "123456";
+            BindingContext = user;
+        }
         async void OnRegister(object sender, EventArgs e)
         {
 
@@ -26,7 +31,7 @@ namespace Wayki.Views.Users
         }
         async void OnLogin(object sender, EventArgs e)
         {
-
+             
             var _LoginModel = (LoginInput)BindingContext;
             if(_LoginModel==null)
             {
