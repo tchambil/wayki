@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Wayki.Services;
 using Xamarin.Forms;
 
 namespace Wayki
@@ -13,7 +13,7 @@ namespace Wayki
 		{
 			InitializeComponent();
 
-			MainPage = new Wayki.Views.Users.Account();
+			MainPage = new Wayki.Views.Users.Account(new UserAppService());
 		}
 
 		protected override void OnStart ()

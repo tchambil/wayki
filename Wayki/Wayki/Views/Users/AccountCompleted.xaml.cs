@@ -24,9 +24,18 @@ namespace Wayki.Views.Users
         {
             base.OnAppearing();
             if (Cargado) return;
+            var result = await _userAppService.Login(UserAppService.UserLoing);
+            if (result == null)
+            {
+                await DisplayAlert("Error", "No hay conexión con el servidor, intente más tarde", "Aceptar");
+                return;
+            }
+            else
+            {
+                await DisplayAlert("OK", "Acceso autorizado", "Aceptar");
+            }
 
-            
-      
+
         }
         public async void IrAlInicio(object sender, EventArgs e)
         {

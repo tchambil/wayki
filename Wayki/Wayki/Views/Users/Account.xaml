@@ -33,7 +33,7 @@
                                             Text="{Binding Path=UsernameOrEmailAddress}"
                                          TextChanged="Entry_EmailTextChanged"
                                             Placeholder="Ingrese su email"
-                                       
+                                      
                                          TextColor="White" 
                                          PlaceholderColor="White"
                                             HorizontalOptions = "Fill" >
@@ -54,6 +54,7 @@
                                              Text="{Binding Path=Password}"
                                             Placeholder="Ingrese su password"
                                             IsPassword="True"
+                                      
                                           PlaceholderColor="White"
                                            TextColor="White"  
                                             HorizontalOptions = "Fill">
