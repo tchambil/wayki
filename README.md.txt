@@ -1,0 +1,1 @@
+Aplicación Móvil que permita crear una base de datos de personas para familiares de damnificados por un desastre natural y brindar información sobre su situación y su posible ubicación. 

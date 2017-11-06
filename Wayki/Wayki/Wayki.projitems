@@ -12,8 +12,30 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BordeEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BordeEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\EntryLengthValidatorBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ShadowEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Styles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ValidadorEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ValidadorEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AudioVisualItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DatosImagenVideo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FilesItems.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LoginInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IUserAppService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Users\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Users\RegisterCompleted.xaml.cs">
+      <DependentUpon>RegisterCompleted.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -22,6 +44,18 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Users\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Users\RegisterCompleted.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
